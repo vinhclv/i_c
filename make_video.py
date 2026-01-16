@@ -220,11 +220,17 @@ def render_video():
     final_video = final_video.set_duration(audio_clip.duration)
 
     final_video.write_videofile(
-        PATHS['output_video'], 
-        fps=SETTINGS['video_fps'], 
-        codec='libx264', 
-        audio_codec='aac',
-        ffmpeg_params=['-pix_fmt', 'yuv420p']
+        PATHS['output_video'],
+        fps=SETTINGS['video_fps'],
+        codec='h264_nvenc',
+        ffmpeg_params=[
+            '-preset', 'p1',
+            '-rc', 'constqp',
+            '-qp', '24',
+            '-pix_fmt', 'yuv420p',
+            '-colorspace', 'bt709'
+        ],
+        threads=16
     )
     print(f"\n🎉 HOÀN THÀNH: {PATHS['output_video']}")
 

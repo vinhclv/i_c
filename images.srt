@@ -1,187 +1,187 @@
-1 00:00:00,031 --> 00:00:11,227 data/output/1/3.png | pop
+1 00:00:00,031 --> 00:00:11,227 data/output/1/3.png | swing
 
-2 00:00:01,000 --> 00:00:11,227 data/output/1/1.png | spin
+2 00:00:01,000 --> 00:00:11,227 data/output/1/1.png | pulse
 
-3 00:00:03,121 --> 00:00:11,227 data/output/1/4.png | slide
+3 00:00:02,000 --> 00:00:11,227 data/output/1/5.png | slide
 
-4 00:00:05,800 --> 00:00:11,227 data/output/1/2.png | flip
+4 00:00:04,177 --> 00:00:11,227 data/output/1/2.png | pulse
 
-5 00:00:06,400 --> 00:00:11,227 data/output/1/6.png | float
+5 00:00:05,999 --> 00:00:11,227 data/output/1/4.png | slide
 
-6 00:00:07,500 --> 00:00:11,227 data/output/1/5.png | float
+6 00:00:08,000 --> 00:00:11,227 data/output/1/7.png | pulse
 
-7 00:00:09,800 --> 00:00:11,227 data/output/1/7.png | draw
+7 00:00:09,024 --> 00:00:11,227 data/output/1/6.png | float
 
-8 00:00:11,227 --> 00:00:26,528 data/output/2/1.png | pop
+8 00:00:12,228 --> 00:00:26,528 data/output/2/3.png | swing
 
-9 00:00:13,290 --> 00:00:26,528 data/output/2/5.png | spin
+9 00:00:13,290 --> 00:00:26,528 data/output/2/1.png | slide
 
-10 00:00:16,500 --> 00:00:26,528 data/output/2/2.png | slide
+10 00:00:14,431 --> 00:00:26,528 data/output/2/5.png | slide
 
-11 00:00:18,200 --> 00:00:26,528 data/output/2/6.png | float
+11 00:00:16,574 --> 00:00:26,528 data/output/2/7.png | pulse
 
-12 00:00:20,100 --> 00:00:26,528 data/output/2/3.png | flip
+12 00:00:18,437 --> 00:00:26,528 data/output/2/6.png | boiling
 
-13 00:00:22,400 --> 00:00:26,528 data/output/2/4.png | draw
+13 00:00:21,040 --> 00:00:26,528 data/output/2/2.png | pulse
 
-14 00:00:24,000 --> 00:00:26,528 data/output/2/7.png | slide
+14 00:00:23,564 --> 00:00:26,528 data/output/2/4.png | slide
 
-15 00:00:27,841 --> 00:00:30,247 data/output/3/3.png | spin
+15 00:00:27,841 --> 00:00:30,247 data/output/3/3.png | swing
 
-16 00:00:28,500 --> 00:00:30,247 data/output/3/1.png | pop
+16 00:00:28,141 --> 00:00:30,247 data/output/3/1.png | pulse
 
-17 00:00:29,000 --> 00:00:30,247 data/output/3/2.png | slide
+17 00:00:28,441 --> 00:00:30,247 data/output/3/5.png | slide
 
-18 00:00:29,400 --> 00:00:30,247 data/output/3/4.png | float
+18 00:00:28,741 --> 00:00:30,247 data/output/3/2.png | slide
 
-19 00:00:29,700 --> 00:00:30,247 data/output/3/5.png | flip
+19 00:00:29,041 --> 00:00:30,247 data/output/3/4.png | pulse
 
-20 00:00:29,900 --> 00:00:30,247 data/output/3/6.png | draw
+20 00:00:29,341 --> 00:00:30,247 data/output/3/6.png | float
 
-21 00:00:31,690 --> 00:00:43,437 data/output/4/3.png | pop
+21 00:00:31,690 --> 00:00:43,437 data/output/4/2.png | swing
 
-22 00:00:34,200 --> 00:00:43,437 data/output/4/6.png | draw
+22 00:00:31,991 --> 00:00:43,437 data/output/4/3.png | pulse
 
-23 00:00:36,500 --> 00:00:43,437 data/output/4/2.png | spin
+23 00:00:34,276 --> 00:00:43,437 data/output/4/1.png | pulse
 
-24 00:00:38,400 --> 00:00:43,437 data/output/4/5.png | flip
+24 00:00:36,882 --> 00:00:43,437 data/output/4/4.png | slide
 
-25 00:00:40,200 --> 00:00:43,437 data/output/4/1.png | slide
+25 00:00:38,004 --> 00:00:43,437 data/output/4/5.png | slide
 
-26 00:00:42,100 --> 00:00:43,437 data/output/4/4.png | float
+26 00:00:41,031 --> 00:00:43,437 data/output/4/6.png | boiling
 
-27 00:00:43,855 --> 00:00:58,339 data/output/5/3.png | pop
+27 00:00:43,855 --> 00:00:58,339 data/output/5/3.png | swing
 
-28 00:00:48,200 --> 00:00:58,339 data/output/5/4.png | flip
+28 00:00:44,817 --> 00:00:58,339 data/output/5/2.png | pulse
 
-29 00:00:51,500 --> 00:00:58,339 data/output/5/2.png | slide
+29 00:00:47,140 --> 00:00:58,339 data/output/5/1.png | pulse
 
-30 00:00:54,000 --> 00:00:58,339 data/output/5/5.png | draw
+30 00:00:49,284 --> 00:00:58,339 data/output/5/5.png | pulse
 
-31 00:00:56,200 --> 00:00:58,339 data/output/5/1.png | float
+31 00:00:51,868 --> 00:00:58,339 data/output/5/4.png | slide
 
-32 00:00:57,500 --> 00:00:58,339 data/output/5/6.png | spin
+32 00:00:55,133 --> 00:00:58,339 data/output/5/6.png | boiling
 
-33 00:00:59,541 --> 00:01:07,213 data/output/6/3.png | pop
+33 00:00:59,541 --> 00:01:07,213 data/output/6/3.png | swing
 
-34 00:01:01,400 --> 00:01:07,213 data/output/6/1.png | slide
+34 00:01:00,182 --> 00:01:07,213 data/output/6/1.png | pulse
 
-35 00:01:03,200 --> 00:01:07,213 data/output/6/2.png | draw
+35 00:01:02,005 --> 00:01:07,213 data/output/6/2.png | pulse
 
-36 00:01:04,500 --> 00:01:07,213 data/output/6/4.png | flip
+36 00:01:03,747 --> 00:01:07,213 data/output/6/4.png | slide
 
-37 00:01:05,800 --> 00:01:07,213 data/output/6/5.png | float
+37 00:01:04,909 --> 00:01:07,213 data/output/6/5.png | slide
 
-38 00:01:06,500 --> 00:01:07,213 data/output/6/6.png | spin
+38 00:01:06,312 --> 00:01:07,213 data/output/6/6.png | boiling
 
-39 01:08,493 --> 01:12,460 data/output/7/3.png | pop
+39 00:01:08,493 --> 00:01:12,460 data/output/7/1.png | swing
 
-40 01:09,500 --> 01:12,460 data/output/7/1.png | slide
+40 00:01:09,355 --> 00:01:12,460 data/output/7/3.png | pulse
 
-41 01:10,200 --> 01:12,460 data/output/7/4.png | flip
+41 00:01:10,296 --> 00:01:12,460 data/output/7/5.png | slide
 
-42 01:10,800 --> 01:12,460 data/output/7/2.png | draw
+42 00:01:10,600 --> 00:01:12,460 data/output/7/2.png | pulse
 
-43 01:11,500 --> 01:12,460 data/output/7/5.png | float
+43 00:01:11,459 --> 00:01:12,460 data/output/7/4.png | slide
 
-44 01:11,900 --> 01:12,460 data/output/7/6.png | spin
+44 00:01:11,800 --> 00:01:12,460 data/output/7/6.png | boiling
 
-45 01:13,262 --> 01:20,656 data/output/8/3.png | pop
+45 00:01:13,262 --> 00:01:20,656 data/output/8/3.png | swing
 
-46 01:15,100 --> 01:20,656 data/output/8/5.png | spin
+46 00:01:13,943 --> 00:01:20,656 data/output/8/1.png | slide
 
-47 01:16,500 --> 01:20,656 data/output/8/1.png | slide
+47 00:01:14,885 --> 00:01:20,656 data/output/8/4.png | pulse
 
-48 01:17,800 --> 01:20,656 data/output/8/2.png | flip
+48 00:01:15,907 --> 00:01:20,656 data/output/8/2.png | slide
 
-49 01:18,900 --> 01:20,656 data/output/8/4.png | draw
+49 00:01:16,869 --> 00:01:20,656 data/output/8/5.png | boiling
 
-50 01:19,800 --> 01:20,656 data/output/8/6.png | float
+50 00:01:19,173 --> 00:01:20,656 data/output/8/6.png | pulse
 
-51 00:01:21,277 --> 00:01:29,472 data/output/9/4.png | pop
+51 00:01:21,277 --> 00:01:29,472 data/output/9/4.png | jello
 
-52 00:01:21,918 --> 00:01:29,472 data/output/9/1.png | float
+52 00:01:21,918 --> 00:01:29,472 data/output/9/2.png | pulse
 
-53 00:01:22,780 --> 00:01:29,472 data/output/9/3.png | flip
+53 00:01:22,780 --> 00:01:29,472 data/output/9/3.png | pulse
 
-54 00:01:24,102 --> 00:01:29,472 data/output/9/2.png | draw
+54 00:01:24,102 --> 00:01:29,472 data/output/9/5.png | pulse
 
-55 00:01:25,500 --> 00:01:29,472 data/output/9/5.png | draw
+55 00:01:24,683 --> 00:01:29,472 data/output/9/6.png | pulse
 
-56 00:01:27,969 --> 00:01:29,472 data/output/9/7.png | pop
+56 00:01:26,146 --> 00:01:29,472 data/output/9/1.png | boiling
 
-57 00:01:28,791 --> 00:01:29,472 data/output/9/6.png | draw
+57 00:01:28,791 --> 00:01:29,472 data/output/9/7.png | pulse
 
-58 00:01:29,452 --> 00:01:48,605 data/output/10/3.png | pop
+58 00:01:29,452 --> 00:01:48,605 data/output/10/3.png | jello
 
-59 00:01:33,198 --> 00:01:48,605 data/output/10/1.png | draw
+59 00:01:37,326 --> 00:01:48,605 data/output/10/4.png | pulse
 
-60 00:01:35,743 --> 00:01:48,605 data/output/10/4.png | spin
+60 00:01:38,287 --> 00:01:48,605 data/output/10/6.png | pulse
 
-61 00:01:39,389 --> 00:01:48,605 data/output/10/2.png | pop
+61 00:01:38,908 --> 00:01:48,605 data/output/10/5.png | boiling
 
-62 00:01:43,997 --> 00:01:48,605 data/output/10/5.png | flip
+62 00:01:46,902 --> 00:01:48,605 data/output/10/2.png | pulse
 
-63 00:01:46,281 --> 00:01:48,605 data/output/10/6.png | float
+63 00:01:47,463 --> 00:01:48,605 data/output/10/1.png | pulse
 
-64 00:01:49,907 --> 00:01:53,333 data/output/11/4.png | spin
+64 00:01:49,907 --> 00:01:53,333 data/output/11/4.png | jello
 
-65 00:01:50,500 --> 00:01:53,333 data/output/11/3.png | draw
+65 00:01:50,500 --> 00:01:53,333 data/output/11/3.png | pulse
 
-66 00:01:51,200 --> 00:01:53,333 data/output/11/1.png | slide
+66 00:01:51,100 --> 00:01:53,333 data/output/11/1.png | pulse
 
-67 00:01:52,011 --> 00:01:53,333 data/output/11/2.png | pop
+67 00:01:51,600 --> 00:01:53,333 data/output/11/5.png | pulse
 
-68 00:01:52,472 --> 00:01:53,333 data/output/11/5.png | draw
+68 00:01:52,011 --> 00:01:53,333 data/output/11/2.png | pulse
 
-69 00:01:52,800 --> 00:01:53,333 data/output/11/6.png | float
+69 00:01:52,472 --> 00:01:53,333 data/output/11/6.png | pulse
 
-70 00:01:54,595 --> 00:02:03,173 data/output/12/3.png | pop
+70 00:01:54,595 --> 00:02:03,173 data/output/12/3.png | jello
 
-71 00:01:54,896 --> 00:02:03,173 data/output/12/1.png | float
+71 00:01:56,980 --> 00:02:03,173 data/output/12/1.png | pulse
 
-72 00:01:57,000 --> 00:02:03,173 data/output/12/2.png | draw
+72 00:01:57,501 --> 00:02:03,173 data/output/12/4.png | pulse
 
-73 00:01:59,165 --> 00:02:03,173 data/output/12/4.png | pop
+73 00:01:59,165 --> 00:02:03,173 data/output/12/6.png | boiling
 
-74 00:02:01,009 --> 00:02:03,173 data/output/12/6.png | draw
+74 00:02:01,009 --> 00:02:03,173 data/output/12/2.png | pulse
 
-75 00:02:02,412 --> 00:02:03,173 data/output/12/5.png | slide
+75 00:02:02,412 --> 00:02:03,173 data/output/12/5.png | pulse
 
-76 00:02:03,614 --> 00:02:09,567 data/output/13/1.png | pop
+76 00:02:03,614 --> 00:02:09,567 data/output/13/1.png | jello
 
-77 00:02:04,015 --> 00:02:09,567 data/output/13/2.png | float
+77 00:02:04,015 --> 00:02:09,567 data/output/13/3.png | boiling
 
-78 00:02:04,957 --> 00:02:09,567 data/output/13/4.png | float
+78 00:02:04,957 --> 00:02:09,567 data/output/13/6.png | boiling
 
-79 00:02:06,641 --> 00:02:09,567 data/output/13/3.png | slide
+79 00:02:06,641 --> 00:02:09,567 data/output/13/2.png | pulse
 
-80 00:02:07,603 --> 00:02:09,567 data/output/13/6.png | spin
+80 00:02:07,603 --> 00:02:09,567 data/output/13/4.png | float
 
-81 00:02:08,765 --> 00:02:09,567 data/output/13/5.png | flip
+81 00:02:08,765 --> 00:02:09,567 data/output/13/5.png | pulse
 
-82 00:02:10,728 --> 00:02:18,677 data/output/14/2.png | pop
+82 00:02:10,728 --> 00:02:18,677 data/output/14/2.png | jello
 
-83 00:02:10,968 --> 00:02:18,677 data/output/14/1.png | spin
+83 00:02:11,609 --> 00:02:18,677 data/output/14/5.png | boiling
 
-84 00:01:21,609 --> 00:02:18,677 data/output/14/4.png | draw
+84 00:02:13,351 --> 00:02:18,677 data/output/14/4.png | boiling
 
-85 00:02:13,500 --> 00:02:18,677 data/output/14/5.png | pop
+85 00:02:14,412 --> 00:02:18,677 data/output/14/1.png | boiling
 
-86 00:02:15,434 --> 00:02:18,677 data/output/14/6.png | draw
+86 00:02:15,434 --> 00:02:18,677 data/output/14/3.png | boiling
 
-87 00:02:16,094 --> 00:02:18,677 data/output/14/3.png | float
+87 00:02:16,475 --> 00:02:18,677 data/output/14/7.png | pulse
 
-88 00:02:17,316 --> 00:02:18,677 data/output/14/7.png | float
+88 00:02:17,456 --> 00:02:18,677 data/output/14/6.png | pulse
 
-89 00:02:19,599 --> 00:02:28,269 data/output/15/3.png | pop
+89 00:02:19,599 --> 00:02:28,269 data/output/15/3.png | jello
 
-90 00:02:20,940 --> 00:02:28,269 data/output/15/1.png | flip
+90 00:02:20,940 --> 00:02:28,269 data/output/15/4.png | boiling
 
-91 00:02:21,521 --> 00:02:28,269 data/output/15/5.png | slide
+91 00:02:21,521 --> 00:02:28,269 data/output/15/2.png | boiling
 
-92 00:02:23,000 --> 00:02:28,269 data/output/15/2.png | float
+92 00:02:22,963 --> 00:02:28,269 data/output/15/1.png | boiling
 
-93 00:02:24,464 --> 00:02:28,269 data/output/15/6.png | slide
+93 00:02:24,464 --> 00:02:28,269 data/output/15/5.png | boiling
 
-94 00:02:27,608 --> 00:02:28,269 data/output/15/4.png | draw
+94 00:02:26,206 --> 00:02:28,269 data/output/15/6.png | pulse

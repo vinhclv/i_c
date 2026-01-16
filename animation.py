@@ -1,129 +1,142 @@
 import numpy as np
-import cv2
+import pytweening
 from moviepy.editor import ImageClip
 
-# ==========================================
-# 🧠 BỘ NÃO TOÁN HỌC (EASING FUNCTIONS)
-# ==========================================
 
-def ease_out_expo(t):
-    return 1 if t >= 1 else 1 - pow(2, -10 * max(0, t))
+# ===============================
+# UTILS
+# ===============================
 
-def ease_out_back(t):
-    c1 = 1.70158
-    c3 = c1 + 1
-    t_m = max(0, min(1, t)) - 1
-    return 1 + c3 * pow(t_m, 3) + c1 * pow(t_m, 2)
+def clamp01(x):
+    return max(0.0, min(1.0, x))
 
-def ease_out_elastic(t):
-    if t <= 0: return 0
-    if t >= 1: return 1
-    c4 = (2 * np.pi) / 3
-    return pow(2, -10 * t) * np.sin((t * 10 - 0.75) * c4) + 1
 
-# ==========================================
-# 🛠️ HELPER: THAY THẾ RESIZE CỦA MOVIEPY
-# ==========================================
+def clamp(v, lo=0.01, hi=10):
+    return max(lo, min(hi, v))
 
-def manual_resize_frame(get_frame, t, duration, effect_type):
-    frame = get_frame(t)
-    h, w, c = frame.shape  # Lấy chính xác số kênh màu (3 hoặc 4)
 
-    progress = min(1.0, max(0.0, t / duration)) if duration > 0 else 1.0
-    
-    # Tính toán scale dựa trên hiệu ứng
-    if effect_type == 'pop':
-        scale = ease_out_elastic(progress)
-        scale_w, scale_h = scale, scale
-    elif effect_type == 'flip':
-        scale_w = ease_out_expo(progress)
-        scale_h = 1.0
-    elif effect_type == 'spin':
-        scale = ease_out_expo(progress)
-        scale_w, scale_h = scale, scale
-    else:
-        return frame
+# ===============================
+# EASING
+# ===============================
 
-    # Bảo vệ: Không để scale <= 0
-    scale_w = max(0.01, scale_w)
-    scale_h = max(0.01, scale_h)
+def ease_out(p):
+    return pytweening.easeOutBack(p)
 
-    new_w, new_h = int(w * scale_w), int(h * scale_h)
-    
-    # Nếu ảnh quá nhỏ, trả về frame trống cùng số kênh màu
-    if new_w < 1 or new_h < 1: 
-        return np.zeros((h, w, c), dtype="uint8")
 
-    # Resize chất lượng cao
-    resized = cv2.resize(frame, (new_w, new_h), interpolation=cv2.INTER_LANCZOS4)
-    
-    # Khởi tạo canvas dựa trên số kênh màu thực tế (c) để tránh lỗi Broadcast
-    canvas = np.zeros((h, w, c), dtype="uint8")
-    
-    y_off = (h - new_h) // 2
-    x_off = (w - new_w) // 2
-    
-    # Tính toán vùng cắt dán an toàn
-    y1, y2 = max(0, y_off), min(h, y_off + new_h)
-    x1, x2 = max(0, x_off), min(w, x_off + new_w)
-    
-    ry1, ry2 = max(0, -y_off), max(0, -y_off) + (y2 - y1)
-    rx1, rx2 = max(0, -x_off), max(0, -x_off) + (x2 - x1)
-    
-    # Dán phần đã resize vào giữa canvas
-    canvas[y1:y2, x1:x2] = resized[ry1:ry2, rx1:rx2]
-    return canvas
+def ease_in(p):
+    return pytweening.easeInBack(p)
 
-# ==========================================
-# 🎬 TRÌNH QUẢN LÝ HIỆU ỨNG
-# ==========================================
+
+def ease_elastic(p):
+    return pytweening.easeOutElastic(p)
+
+
+# ===============================
+# SCALE FUNC (SAFE)
+# ===============================
+
+def scale_func(t, total, effect, intro, outro):
+    # clamp time
+    if t < 0:
+        t = 0
+    if t > total:
+        t = total
+
+    s = 1.0
+
+    # ---- INTRO ----
+    if t < intro:
+        p = clamp01(t / intro)
+
+        if effect in ["pop", "pulse", "jello"]:
+            s = 0.6 + 0.4 * ease_elastic(p)
+        else:
+            s = ease_out(p)
+
+    # ---- OUTRO ----
+    elif t > total - outro:
+        p = clamp01((t - (total - outro)) / outro)
+        s = ease_in(1 - p)
+
+    # ---- SAFE GUARD ----
+    if not np.isfinite(s):
+        s = 0.05
+
+    return max(0.05, float(s))
+
+
+# ===============================
+# MAIN
+# ===============================
 
 def apply_animation(clip, effect_name, target_x, target_y, duration, hand_img_path=None):
     target_x, target_y = int(target_x), int(target_y)
-    
-    # Thêm crossfadein nhẹ để tránh giật hình
-    clip = clip.crossfadein(0.2)
 
-    if effect_name in ['slide', 'slide_up']:
-        def pos_func(t):
-            prog = min(1.0, t / duration)
-            val = ease_out_back(prog)
-            start_y = target_y + 150 
-            curr_y = start_y + (target_y - start_y) * val
-            return (target_x, int(curr_y))
-        return clip.set_position(pos_func), None
+    total = clip.duration
+    intro = min(duration, total * 0.4)
+    outro = min(duration * 0.8, total * 0.4)
 
-    elif effect_name == 'float':
-        def float_pos(t):
-            off_y = 8 * np.sin(1.5 * t) 
-            off_x = 4 * np.cos(1.0 * t)
-            return (target_x + int(off_x), target_y + int(off_y))
-        return clip.set_position(float_pos), None
+    # ---- SCALE SAFE ----
+    animated = clip.resize(lambda t: scale_func(min(t, total), total, effect_name, intro, outro))
 
-    elif effect_name in ['pop', 'flip', 'spin']:
-        # fl xử lý biến đổi frame trực tiếp
-        animated_clip = clip.fl(lambda gf, t: manual_resize_frame(gf, t, duration, effect_name))
-        
-        if effect_name == 'spin':
-            # Xoay từ 360 về 0 độ
-            animated_clip = animated_clip.rotate(lambda t: 360 * (1 - ease_out_expo(min(1, t/duration))) if t < duration else 0)
-            
-        return animated_clip.set_position((target_x, target_y)), None
+    slide_dist = animated.w * 1.2
+    drop_dist = animated.h * 1.2
+    fly_dist = animated.w * 2.0
 
-    elif effect_name == 'draw' and hand_img_path:
+    def pos_func(t):
+        x, y = target_x, target_y
+
+        # ---- INTRO ----
+        if t < intro:
+            p = clamp01(t / intro)
+
+            if effect_name == "slide":
+                x = target_x - slide_dist + slide_dist * ease_out(p)
+
+            elif effect_name == "slide_up":
+                y = target_y + drop_dist - drop_dist * ease_out(p)
+
+            elif effect_name in ["drop", "swing"]:
+                y = target_y - drop_dist + drop_dist * pytweening.easeOutBounce(p)
+
+        # ---- FLOAT LOOP ----
+        if effect_name == "float":
+            y += 8 * np.sin(t * 1.6)
+            x += 4 * np.cos(t * 1.2)
+
+        # ---- OUTRO ----
+        if t > total - outro:
+            p = clamp01((t - (total - outro)) / outro)
+            x = target_x + fly_dist * ease_in(p)
+
+        return (int(x), int(y))
+
+    animated = animated.set_position(pos_func)
+
+    # ---- DRAW HAND ----
+    if effect_name == "draw" and hand_img_path:
         w, h = clip.size
         try:
             hand_clip = ImageClip(hand_img_path).resize(height=150)
-            def hand_pos(t):
-                if t >= duration: return (target_x + w, target_y + h + 2000) 
-                prog = t / duration
-                cur_x = target_x + (w * prog)
-                cur_y = target_y + (h * 0.5) + 30 * np.sin(20 * t)
-                return (int(cur_x), int(cur_y))
-            
-            hand_anim = hand_clip.set_start(clip.start).set_duration(duration).set_position(hand_pos)
-            return clip.set_position((target_x, target_y)), hand_anim
-        except:
-            return clip.set_position((target_x, target_y)), None
 
-    return clip.set_position((target_x, target_y)), None
+            def hand_pos(t):
+                if t >= intro:
+                    return (target_x + w, target_y + h + 3000)
+
+                p = clamp01(t / intro)
+                cur_x = target_x + w * p
+                cur_y = target_y + h * 0.6 + 20 * np.sin(18 * t)
+                return (int(cur_x), int(cur_y))
+
+            hand_anim = (
+                hand_clip
+                .set_start(clip.start)
+                .set_duration(intro)
+                .set_position(hand_pos)
+            )
+
+            return animated, hand_anim
+        except:
+            return animated, None
+
+    return animated, None
